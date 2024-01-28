@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant Menu and Orders</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="scripts/script.js"></script>
+  </head>
+  <body>
+    <div class="top">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="fname" /><br />
+    </div>
+
+    <div class="menu" id="drinks">
+      <h3>Drinks</h3>
+      <label for="drink1">Water:</label>
+      <input type="text" id="drinkNum1" width: 20 /> <br />
+      <label for="drink2">Lemonade:</label>
+      <input type="text" id="drinkNum2" /> <br />
+      <label for="drink3">Iced Tea:</label>
+      <input type="text" id="drinkNum3" /> <br />
+      <label for="drink4">Mtn Dew:</label>
+      <input type="text" id="drinkNum4" /> <br />
+      <label for="drink5">Dr Pepper:</label>
+      <input type="text" id="drinkNum5" /> <br />
+    </div>
+
+    <div class="menu" id="sandwiches">
+      <h3>Sandwiches</h3>
+      <label for="san1">Ham & cheese:</label>
+      <input type="text" id="sanNum1" width: 20 /> <br />
+      <label for="san2">BLT:</label>
+      <input type="text" id="sanNum2" /> <br />
+      <label for="san3">Salami & Cheddar:</label>
+      <input type="text" id="sanNum3" /> <br />
+      <label for="san4">PB & J:</label>
+      <input type="text" id="sanNum4" /> <br />
+      <label for="san5">Reuben:</label>
+      <input type="text" id="sanNum5" /> <br />
+    </div>
+
+    <div class="menu" id="desert">
+      <h3>Sides and Deserts</h3>
+      <label for="des1">French Fries:</label>
+      <input type="text" id="desNum1" width: 20 /> <br />
+      <label for="des2">Onion Rings:</label>
+      <input type="text" id="desNum2" /> <br />
+      <label for="des3">Cherry Pie:</label>
+      <input type="text" id="desNum3" /> <br />
+      <label for="des4">Apple Pie:</label>
+      <input type="text" id="desNum4" /> <br />
+      <label for="des5">Strawberry Shortcake:</label>
+      <input type="text" id="desNum5" /> <br />
+    </div>
+
+    <button onclick="displayOrderSummary()">Submit Order</button>
+
+    <div id="orderSummary"></div>
+  </body>
+  <footer>Kaitlyn Clay</footer>
+</html>
