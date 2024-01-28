@@ -47,20 +47,25 @@ function estimate() {
 
     if (room == 1) {
         document.getElementById("rm1cost").value = cost1;
+        var totalCost = cost1;
+        document.getElementById("estimate").innerHTML = (name + ", your estimate is $" + totalCost)
     } else if (room == 2) {
         document.getElementById("room2").style.display = "block";
         document.getElementById("rm1cost").value = cost1;
         document.getElementById("rm2cost").value = cost2;
+        var totalCost = cost1 + cost2;
+        document.getElementById("estimate").innerHTML = (name + ", your estimate is $" + totalCost)
     } else {
         document.getElementById("room2").style.display = "block";
         document.getElementById("room3").style.display = "block";
         document.getElementById("rm1cost").value = cost1;
         document.getElementById("rm2cost").value = cost2;
         document.getElementById("rm3cost").value = cost3;
+        var totalCost = cost1 + cost2 + cost3;
+        document.getElementById("estimate").innerHTML = (name + ", your estimate is $" + totalCost)
     }
 
-    var totalCost = cost1 + cost2 + cost3;
-    document.getElementById("estimate").innerHTML = (name + ", your estimate is $" + totalCost)
+    
 }
 
 
