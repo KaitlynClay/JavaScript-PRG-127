@@ -1,7 +1,7 @@
 function start() {
 
     // print your name to the name heading
-    document.getElementById("name").innerHTML = "Your Name Here"
+    document.getElementById("name").innerHTML = "Kaitlyn Clay"
         
 
     /* JS Numbers: https://www.w3schools.com/js/js_numbers.asp
