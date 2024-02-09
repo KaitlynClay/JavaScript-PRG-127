@@ -1,15 +1,19 @@
 // declare and initialize array
-let game = ["COBOL", "JAVA", "PYTHON", "JAVASCRIPT"];
-let choice = Math.floor(Math.random() * 4);
+let game = ["SHIRE", "SHETLAND", "ARABIAN", "MORGAN", "MUSTANG", "APPALOOSA", "BRUMBY", "SADDLEBRED", "RAHVAN", "HAFLINGER"];
+let choice = Math.floor(Math.random() * 10);
 let answer = game[choice];
 let myLength = answer.length;
 let display = [myLength];
 let win = myLength;
 let letters = answer.split('');
 let attemptsLeft = 6;
-let output = '';
+let output = ''; 
 let userLetter = '';
-// game setup works fine --steffen
+let found = false;
+let usedLetters = [];
+
+
+// game setup works fine -- steffen
 function setup() {
     alert(answer);
     for (let i = 0; i < answer.length; i++) {
@@ -20,41 +24,63 @@ function setup() {
 }
 
 
+function updateImage() {
+        let hangmanImage = document.getElementById("hangman");
+        let images = ["../images/01.png"]; // Array containing image URLs
+        let currentImageIndex = images.length - attemptsLeft; // Index of the current hangman image
+        if (currentImageIndex < images.length) {
+            hangmanImage.src = images[currentImageIndex]; // Set the src attribute of the image element
+        }
+}
+    
 
-
-// Issue below here
-// noticed if we uncomment below it reveals all letter for the hangman
-
+function updateUsedLetters() {
+    document.getElementById("guessed").innerHTML = usedLetters.join(', ');
+}
 
 document.getElementById("submit").addEventListener("click", function(event){
-
     event.preventDefault();
     output = '';
     userLetter = document.getElementById("guess").value;
     document.getElementById("guess").value = ''; //would this reset value to null
+
+    if (usedLetters.includes(userLetter)) {
+        alert("Letter already used!");
+        return;
+    }
+
+    usedLetters.push(userLetter);
+    updateUsedLetters()
+
 
     for (let c = 0; c < answer.length; c++) {
         //alert(letters[c]);
         if (userLetter.toUpperCase() == letters[c]) {
             display[c] = userLetter.toUpperCase();
             win--;
+            found = true;
         }
 
         output = output + display[c] + ' ';
     }
-    
-    document.getElementById("word").innerHTML = output;
-    output = '';
-    attemptsLeft--;
 
+    if (found == false) {
+        attemptsLeft--;
+        // updateImage()
+    }
+    found = false
+
+    
     if (win < 1) {
-        document.getElementById("guesses").innerHTML = 'YOU WIN!!!';
+    document.getElementById("guesses").innerHTML = 'YOU WIN!!!';
     } else if (attemptsLeft < 1) {
-        document.getElementById("guesses") = 'YOU LOSE!!!';
+        document.getElementById("guesses").innerHTML = 'YOU LOSE!!!';
     } else {
         document.getElementById("guesses").innerHTML = 'You have ' + attemptsLeft + ' guesses left';
     }
+    
+    document.getElementById("word").innerHTML = output;
+    output = '';
+
+    
 });
-
-
-//scirpt connected fine somereason the button and the script are not registering.
