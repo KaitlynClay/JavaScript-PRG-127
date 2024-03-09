@@ -15,10 +15,16 @@ function genAttributes() {
 
     // determining gender
     var gender = ""
+    var pronoun1 = ""
+    var pronoun2 = ""
     if (genNumber === 1) {
         gender = "female";
+        pronoun1 = "she"
+        pronoun2 = "her"
     } else if (genNumber === 2) {
         gender = "male";
+        pronoun1 = "he"
+        pronoun2 = "his"
     } else {
         gender = "Error: The random number is out of range";
     }
@@ -58,6 +64,9 @@ function genAttributes() {
     document.getElementById("charAge").innerHTML = `Character's Age: ${ranAge}`;
     document.getElementById("vil").innerHTML = `Villain or Hero: ${vil}`;
     document.getElementById("pow").innerHTML = `Powers: ${power}`;
+
+    document.getElementById("all").innerHTML = `Your character, ${letter1}. ${letter2}. ${letter3}., is a ${ranAge} year old ${gender} with ${ranHair} hair and ${ranEye} eyes. <br> In ${pronoun2} time, ${pronoun1} is a ${vil} which ${power}. <br> 
+                                                Their story is set in a ${ranStory} setting.`
     
 }
 

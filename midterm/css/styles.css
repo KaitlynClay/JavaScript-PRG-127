@@ -24,3 +24,8 @@ button {
 button:hover {
     background-color: #1A8A5C;
 }
+
+p {
+    font-size: large;
+    font-weight: bold;
+}
