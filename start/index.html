@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <h1>Getting Started with React</h1>
+    <div id="root"></div>
+    <script type="text/javascript">
+      let react = React.createElement(
+        "ul",
+        null,
+        React.createElement("li", null, "January"),
+        React.createElement("li", null, "February"),
+        React.createElement("li", null, "March"),
+        React.createElement("li", null, "April"),
+        React.createElement("li", null, "May"),
+        React.createElement("li", null, "June"),
+        React.createElement("li", null, "July"),
+        React.createElement("li", null, "August"),
+        React.createElement("li", null, "September"),
+        React.createElement("li", null, "October"),
+        React.createElement("li", null, "November"),
+        React.createElement("li", null, "December")
+      );
+      ReactDOM.render(react, document.getElementById("root"));
+    </script>
+  </body>
+</html>
