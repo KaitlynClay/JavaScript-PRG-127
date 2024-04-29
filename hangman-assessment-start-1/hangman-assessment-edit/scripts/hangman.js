@@ -26,7 +26,7 @@ function setup() {
 
 function updateImage() {
         let hangmanImage = document.getElementById("hangman");
-        let images = ["../images/01.png"]; // Array containing image URLs
+        let images = ["../images/01.png", "../images/02.png", "../images/03.png", "../images/04.png", "../images/05.png", "../images/06.png", "../images/07.png"]; // Array containing image URLs
         let currentImageIndex = images.length - attemptsLeft; // Index of the current hangman image
         if (currentImageIndex < images.length) {
             hangmanImage.src = images[currentImageIndex]; // Set the src attribute of the image element
@@ -66,7 +66,7 @@ document.getElementById("submit").addEventListener("click", function(event){
 
     if (found == false) {
         attemptsLeft--;
-        // updateImage()
+        updateImage()
     }
     found = false
 
